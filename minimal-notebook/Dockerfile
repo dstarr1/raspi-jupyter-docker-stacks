@@ -1,6 +1,7 @@
 # Copyright (c) Jupyter Development Team, step21
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=step21/rpi-base-notebook
+#ARG BASE_CONTAINER=step21/rpi-base-notebook
+ARG BASE_CONTAINER=base-notebook:latest
 FROM $BASE_CONTAINER
 
 LABEL maintainer="step21 <step21@devtal.de>"
@@ -11,7 +12,7 @@ USER root
 RUN apt-get update
 RUN apt-get install -yq --no-install-recommends \
      build-essential \
-     emacs \
+     emacs-nox \
      git \
      inkscape \
      jed \
